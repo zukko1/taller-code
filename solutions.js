@@ -15,3 +15,30 @@ function changeFunc(coins) {
 }
 
 console.log(changeFunc(coins))
+
+
+// Problem 2
+
+
+const test =  [1, 4, 9, 25, 36, 64, 81]
+
+//  T O(n), S O(n)
+function sortedSquaredArray(array){
+  const newArray = []
+  const lastIndex =  array.length -1
+
+  for(let start = 0, end = lastIndex, index = lastIndex; index >= 0; index--){
+    if(Math.abs(array[start]) > Math.abs(array[end])){
+      newArray[index] = array[start] * array[start]
+      start++;
+    } else {
+      newArray[index] = array[end] * array[end]
+      end--;
+    }
+  }
+
+  return newArray
+}
+
+
+console.log(sortedSquaredArray(test))
